@@ -1,16 +1,12 @@
 import pandas as pandas_libreria
 from datetime import datetime
 
-
 """Estructura de los datos"""
 
 lista_habitos_registrados = [] 
 historial_registros_habitos = [] 
 
-
-
 """Funciones principales"""
-
 def agregar_nuevo_habito():
     nombre_habito_ingresado = input("Ingrese el nombre del hábito que desea agregar: ").strip()
 
@@ -22,7 +18,6 @@ def agregar_nuevo_habito():
             print(f"Hábito '{nombre_habito_ingresado}' agregado correctamente.")
     else:
         print("Nombre de hábito no válido.")
-
 
 def eliminar_habito_existente():
     if not lista_habitos_registrados:
@@ -55,7 +50,6 @@ def eliminar_habito_existente():
 
     print(f"Hábito '{habito_a_eliminar}' eliminado correctamente.")
 
-
 def registrar_cumplimiento_diario_habitos():
     if not lista_habitos_registrados:
         print("No hay hábitos registrados todavía.")
@@ -77,7 +71,6 @@ def registrar_cumplimiento_diario_habitos():
 
     print("\nCumplimiento diario registrado exitosamente.")
 
-
 def mostrar_historial_completo_habitos():
     if not historial_registros_habitos:
         print("No hay registros en el historial aún.")
@@ -87,7 +80,6 @@ def mostrar_historial_completo_habitos():
     for registro in historial_registros_habitos:
         texto_estado_habito = "Cumplido" if registro["habito_cumplido"] else "No cumplido"
         print(f"{registro['fecha_registro']} - {registro['nombre_habito']}: {texto_estado_habito}")
-
 
 def exportar_historial_a_dataframe():
     if not historial_registros_habitos:
@@ -100,7 +92,6 @@ def exportar_historial_a_dataframe():
     print(dataframe_historial_habitos)
 
     return dataframe_historial_habitos
-
 
 def mostrar_resumen_semanal_habitos():
     dataframe_historial_habitos = exportar_historial_a_dataframe()
@@ -120,8 +111,6 @@ def mostrar_resumen_semanal_habitos():
     resumen_semanal_habitos["porcentaje_cumplimiento"] *= 100
 
     print(resumen_semanal_habitos)
-
-
 
 """Menú principal"""
 def iniciar_menu_principal():
@@ -156,7 +145,6 @@ def iniciar_menu_principal():
         else:
             print("Opción no válida. Por favor, intente nuevamente.")
 
-
-
 iniciar_menu_principal()
+
 
