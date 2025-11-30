@@ -1,4 +1,4 @@
-import pandas as pandas_libreria
+import pandas as pd
 from datetime import datetime
 
 """Estructura de los datos"""
@@ -86,7 +86,7 @@ def exportar_historial_a_dataframe():
         print("No hay historial disponible para convertir a DataFrame.")
         return None
     
-    dataframe_historial_habitos = pandas_libreria.DataFrame(historial_registros_habitos)
+    dataframe_historial_habitos = pd.DataFrame(historial_registros_habitos)
 
     print("\nDataFrame generado correctamente:")
     print(dataframe_historial_habitos)
@@ -113,7 +113,7 @@ def mostrar_resumen_semanal_habitos():
     print(resumen_semanal_habitos)
 
 """Menú principal"""
-def iniciar_menu_principal():
+def main():
     opcion = "0"
 
     while opcion != "7":
@@ -145,6 +145,6 @@ def iniciar_menu_principal():
         else:
             print("Opción no válida. Por favor, intente nuevamente.")
 
-iniciar_menu_principal()
 
-
+if __name__ == "__main__":
+    main()
